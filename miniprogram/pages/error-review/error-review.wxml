@@ -1,0 +1,66 @@
+<view class="error-review-container">
+  <!-- 加载状态 -->
+  <view class="loading" wx:if="{{loading}}">
+    <text>正在加载错题...</text>
+  </view>
+
+  <!-- 空状态 -->
+  <view class="empty-state" wx:if="{{!loading && errorQuestions.length === 0}}">
+    <view class="empty-icon">🎉</view>
+    <view class="empty-text">暂无错题</view>
+    <view class="empty-desc">继续练习，保持全对记录！</view>
+  </view>
+
+  <!-- 错题内容 -->
+  <view class="content" wx:if="{{!loading && errorQuestions.length > 0}}">
+    <!-- 进度指示 -->
+    <view class="progress">
+      {{currentIndex + 1}} / {{errorQuestions.length}}
+    </view>
+
+    <!-- 题目卡片 -->
+    <view class="question-card card">
+      <view class="question-content">
+        {{errorQuestions[currentIndex].content}}
+      </view>
+      
+      <!-- 选项 -->
+      <view class="options">
+        <view wx:for="{{errorQuestions[currentIndex].options}}" wx:key="label"
+              class="option {{item.label === errorQuestions[currentIndex].answer ? 'correct' : ''}}">
+          <text class="option-label">{{item.label}}</text>
+          <text class="option-text">{{item.text}}</text>
+        </view>
+      </view>
+
+      <!-- 解析 -->
+      <view class="explanation" wx:if="{{showAnswer && errorQuestions[currentIndex].explanation}}">
+        <view class="explanation-title">解析：</view>
+        <view class="explanation-content">
+          {{errorQuestions[currentIndex].explanation}}
+        </view>
+      </view>
+    </view>
+    <!-- 操作按钮 -->
+    <view class="actions">
+      <button class="btn-secondary" bindtap="prevQuestion" 
+              disabled="{{currentIndex <= 0}}">
+        上一题
+      </button>
+      <button class="btn-primary" bindtap="showAnswer" wx:if="{{!showAnswer}}">
+        查看答案
+      </button>
+      <button class="btn-secondary" bindtap="nextQuestion" 
+              disabled="{{currentIndex >= errorQuestions.length - 1}}">
+        下一题
+      </button>
+    </view>
+
+    <!-- 练习按钮 -->
+    <view class="practice-section">
+      <button class="btn-primary" bindtap="startPractice">
+        开始错题练习
+      </button>
+    </view>
+  </view>
+</view>

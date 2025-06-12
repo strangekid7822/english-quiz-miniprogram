@@ -1,0 +1,43 @@
+<view class="result-container">
+  <!-- 成绩展示 -->
+  <view class="score-section card">
+    <view class="score-badge" wx:if="{{newRecord}}">🏆 新纪录!</view>
+    <view class="score-number">{{score}}</view>
+    <view class="score-label">分</view>
+    <view class="accuracy-text">准确率 {{accuracy}}%</view>
+  </view>
+
+  <!-- 详细统计 -->
+  <view class="stats-section card">
+    <view class="stats-title">本次练习统计</view>
+    <view class="stats-grid">
+      <view class="stat-item">
+        <view class="stat-value text-primary">{{totalQuestions}}</view>
+        <view class="stat-label">题目数</view>
+      </view>
+      <view class="stat-item">
+        <view class="stat-value text-success">{{correctCount}}</view>
+        <view class="stat-label">答对</view>
+      </view>
+      <view class="stat-item">
+        <view class="stat-value text-danger">{{totalQuestions - correctCount}}</view>
+        <view class="stat-label">答错</view>
+      </view>
+      <view class="stat-item">
+        <view class="stat-value text-muted">{{timeSpent}}秒</view>
+        <view class="stat-label">用时</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 操作按钮 -->
+  <view class="actions-section">
+    <button class="btn-primary" bindtap="restartQuiz">再来一次</button>
+    <button class="btn-secondary" bindtap="reviewErrors" 
+            wx:if="{{totalQuestions - correctCount > 0}}">
+      查看错题
+    </button>
+    <button class="btn-secondary" bindtap="shareResult">分享成绩</button>
+    <button class="btn-secondary" bindtap="goHome">返回首页</button>
+  </view>
+</view>

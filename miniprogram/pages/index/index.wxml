@@ -1,0 +1,60 @@
+<view class="container">
+  <!-- 用户登录区域 -->
+  <view class="user-section card" wx:if="{{!hasUserInfo}}">
+    <view class="title">欢迎使用智能英语练习</view>
+    <view class="subtitle">授权登录开始学习</view>
+    <button class="btn-primary" open-type="getUserProfile" 
+            bindgetuserinfo="getUserProfile" wx:if="{{canIUseGetUserProfile}}">
+      授权登录
+    </button>
+  </view>
+
+  <!-- 用户信息区域 -->
+  <view class="user-info card" wx:if="{{hasUserInfo}}">
+    <view class="user-avatar">
+      <image src="{{userInfo.avatarUrl}}" mode="aspectFill"></image>
+    </view>
+    <view class="user-details">
+      <view class="username">{{userInfo.nickName}}</view>
+      <view class="user-stats text-muted">
+        今日练习 {{todayQuestions}} 题 · 总准确率 {{accuracy}}%
+      </view>
+    </view>
+  </view>
+
+  <!-- 统计卡片 -->
+  <view class="stats-grid" wx:if="{{hasUserInfo}}">
+    <view class="stat-card">
+      <view class="stat-number text-primary">{{totalQuestions}}</view>
+      <view class="stat-label">总题数</view>
+    </view>
+    <view class="stat-card">
+      <view class="stat-number text-success">{{accuracy}}%</view>
+      <view class="stat-label">准确率</view>
+    </view>
+    <view class="stat-card">
+      <view class="stat-number text-primary">{{streak}}</view>
+      <view class="stat-label">连续天数</view>
+    </view>
+  </view>
+  <!-- 练习选项 -->
+  <view class="practice-options" wx:if="{{hasUserInfo}}">
+    <view class="option-card card" bindtap="startRandomQuiz">
+      <view class="option-icon">🎯</view>
+      <view class="option-title">智能推荐</view>
+      <view class="option-desc">基于你的学习情况推荐题目</view>
+    </view>
+    
+    <view class="option-card card" bindtap="startCategoryQuiz">
+      <view class="option-icon">📚</view>
+      <view class="option-title">分类练习</view>
+      <view class="option-desc">选择特定语法点进行练习</view>
+    </view>
+    
+    <view class="option-card card" bindtap="goToErrorReview">
+      <view class="option-icon">🔄</view>
+      <view class="option-title">错题重练</view>
+      <view class="option-desc">复习之前的错题</view>
+    </view>
+  </view>
+</view>

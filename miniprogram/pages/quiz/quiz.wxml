@@ -1,0 +1,58 @@
+<view class="quiz-container">
+  <!-- 加载状态 -->
+  <view class="loading-section" wx:if="{{loading}}">
+    <view class="loading-text">正在加载题目...</view>
+  </view>
+
+  <!-- 答题区域 -->
+  <view class="quiz-content" wx:if="{{!loading}}">
+    <!-- 进度条 -->
+    <view class="progress-section">
+      <view class="progress-bar">
+        <view class="progress-fill" style="width: {{getProgress()}}%"></view>
+      </view>
+      <view class="progress-text">{{currentIndex + 1}}/{{questions.length}}</view>
+    </view>
+
+    <!-- 题目卡片 -->
+    <view class="question-card card">
+      <view class="question-number">第 {{currentIndex + 1}} 题</view>
+      <view class="question-content">{{currentQuestion.content}}</view>
+      
+      <!-- 选项 -->
+      <view class="options-list">
+        <view wx:for="{{currentQuestion.options}}" wx:key="label"
+              class="option-item {{selectedAnswer === item.label ? 'selected' : ''}}"
+              data-answer="{{item.label}}" 
+              bindtap="selectAnswer">
+          <view class="option-label">{{item.label}}</view>
+          <view class="option-text">{{item.text}}</view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 答案反馈 -->
+    <view class="result-section card" wx:if="{{showResult}}">
+      <view class="result-icon {{isCorrect ? 'correct' : 'incorrect'}}">
+        {{isCorrect ? '✓' : '✗'}}
+      </view>
+      <view class="result-text">
+        {{isCorrect ? '回答正确！' : '回答错误'}}
+      </view>
+      <view class="explanation" wx:if="{{currentQuestion.explanation}}">
+        <view class="explanation-title">解析：</view>
+        <view class="explanation-content">{{currentQuestion.explanation}}</view>
+      </view>
+    </view>
+    <!-- 操作按钮 -->
+    <view class="action-buttons">
+      <button class="btn-secondary" bindtap="exitQuiz">退出练习</button>
+      <button class="btn-primary" wx:if="{{!showResult}}" bindtap="submitAnswer">
+        提交答案
+      </button>
+      <button class="btn-primary" wx:if="{{showResult}}" bindtap="nextQuestion">
+        {{currentIndex + 1 >= questions.length ? '查看结果' : '下一题'}}
+      </button>
+    </view>
+  </view>
+</view>

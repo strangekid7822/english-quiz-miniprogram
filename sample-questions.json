@@ -1,0 +1,162 @@
+[
+  {
+    "_id": "q001",
+    "content": "I ______ to the store yesterday.",
+    "options": [
+      {"label": "A", "text": "go"},
+      {"label": "B", "text": "went"},
+      {"label": "C", "text": "going"},
+      {"label": "D", "text": "goes"}
+    ],
+    "answer": "B",
+    "explanation": "Past tense is needed for 'yesterday'. 'Went' is the past tense of 'go'.",
+    "difficulty": 2,
+    "category": "grammar",
+    "tags": ["past tense", "irregular verbs"],
+    "errorRate": 0.3
+  },
+  {
+    "_id": "q002", 
+    "content": "She has ______ here for five years.",
+    "options": [
+      {"label": "A", "text": "live"},
+      {"label": "B", "text": "lived"},
+      {"label": "C", "text": "living"},
+      {"label": "D", "text": "lives"}
+    ],
+    "answer": "B",
+    "explanation": "Present perfect tense requires past participle 'lived' with 'has'.",
+    "difficulty": 3,
+    "category": "grammar", 
+    "tags": ["present perfect", "time expressions"],
+    "errorRate": 0.45
+  },
+  {
+    "_id": "q003",
+    "content": "Choose the correct word: The book is very ______.",
+    "options": [
+      {"label": "A", "text": "interested"},
+      {"label": "B", "text": "interesting"},
+      {"label": "C", "text": "interest"},
+      {"label": "D", "text": "interests"}
+    ],
+    "answer": "B",
+    "explanation": "Use '-ing' adjectives for things that cause the feeling.",
+    "difficulty": 2,
+    "category": "vocabulary",
+    "tags": ["adjectives", "word forms"],
+    "errorRate": 0.35
+  },
+  {
+    "_id": "q004",
+    "content": "If I ______ you, I would study harder.",
+    "options": [
+      {"label": "A", "text": "am"},
+      {"label": "B", "text": "was"},
+      {"label": "C", "text": "were"},
+      {"label": "D", "text": "will be"}
+    ],
+    "answer": "C",
+    "explanation": "Second conditional uses 'were' for all persons in the if-clause.",
+    "difficulty": 4,
+    "category": "grammar",
+    "tags": ["conditionals", "subjunctive"],
+    "errorRate": 0.6
+  },
+  {
+    "_id": "q005",
+    "content": "The weather is ______ today than yesterday.",
+    "options": [
+      {"label": "A", "text": "good"},
+      {"label": "B", "text": "better"},
+      {"label": "C", "text": "best"},
+      {"label": "D", "text": "well"}
+    ],
+    "answer": "B",
+    "explanation": "Comparative form 'better' is used when comparing two things.",
+    "difficulty": 2,
+    "category": "grammar",
+    "tags": ["comparatives", "adjectives"],
+    "errorRate": 0.25
+  },
+  {
+    "_id": "q006",
+    "content": "Choose the synonym for 'enormous':",
+    "options": [
+      {"label": "A", "text": "tiny"},
+      {"label": "B", "text": "huge"},
+      {"label": "C", "text": "medium"},
+      {"label": "D", "text": "small"}
+    ],
+    "answer": "B",
+    "explanation": "'Huge' means very large, same as 'enormous'.",
+    "difficulty": 1,
+    "category": "vocabulary",
+    "tags": ["synonyms", "adjectives"],
+    "errorRate": 0.15
+  },
+  {
+    "_id": "q007",
+    "content": "She ______ to music while she was studying.",
+    "options": [
+      {"label": "A", "text": "listen"},
+      {"label": "B", "text": "listened"},
+      {"label": "C", "text": "was listening"},
+      {"label": "D", "text": "listens"}
+    ],
+    "answer": "C",
+    "explanation": "Past continuous is used for ongoing actions in the past.",
+    "difficulty": 3,
+    "category": "grammar",
+    "tags": ["past continuous", "while clauses"],
+    "errorRate": 0.4
+  },
+  {
+    "_id": "q008",
+    "content": "Complete the sentence: 'I wish I ______ more time.'",
+    "options": [
+      {"label": "A", "text": "have"},
+      {"label": "B", "text": "had"},
+      {"label": "C", "text": "will have"},
+      {"label": "D", "text": "having"}
+    ],
+    "answer": "B",
+    "explanation": "'I wish' is followed by past tense to express present regret.",
+    "difficulty": 4,
+    "category": "grammar",
+    "tags": ["wish clauses", "subjunctive"],
+    "errorRate": 0.55
+  },
+  {
+    "_id": "q009",
+    "content": "What does 'break the ice' mean?",
+    "options": [
+      {"label": "A", "text": "To literally break ice"},
+      {"label": "B", "text": "To start a conversation"},
+      {"label": "C", "text": "To be very cold"},
+      {"label": "D", "text": "To stop talking"}
+    ],
+    "answer": "B",
+    "explanation": "'Break the ice' is an idiom meaning to start a conversation or interaction.",
+    "difficulty": 2,
+    "category": "vocabulary",
+    "tags": ["idioms", "expressions"],
+    "errorRate": 0.3
+  },
+  {
+    "_id": "q010",
+    "content": "Choose the correct article: 'I saw ______ elephant at the zoo.'",
+    "options": [
+      {"label": "A", "text": "a"},
+      {"label": "B", "text": "an"},
+      {"label": "C", "text": "the"},
+      {"label": "D", "text": "no article"}
+    ],
+    "answer": "B",
+    "explanation": "Use 'an' before words starting with vowel sounds.",
+    "difficulty": 1,
+    "category": "grammar",
+    "tags": ["articles", "vowel sounds"],
+    "errorRate": 0.2
+  }
+]

@@ -1,0 +1,98 @@
+/* 个人中心样式 */
+.profile-container {
+  padding: 40rpx;
+  background: #F8F9FA;
+  min-height: 100vh;
+}
+
+.user-section {
+  margin-bottom: 32rpx;
+}
+
+.user-header {
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 60rpx;
+  margin-right: 32rpx;
+}
+
+.user-info {
+  flex: 1;
+}
+
+.username {
+  font-size: 36rpx;
+  font-weight: 600;
+  color: #1A1A1A;
+  margin-bottom: 8rpx;
+}
+
+.user-level {
+  font-size: 28rpx;
+  color: #4A90E2;
+  padding: 8rpx 16rpx;
+  background: rgba(74, 144, 226, 0.1);
+  border-radius: 20rpx;
+  display: inline-block;
+}
+.stats-section {
+  margin-bottom: 32rpx;
+}
+
+.section-title {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #1A1A1A;
+  margin-bottom: 24rpx;
+}
+
+.stats-grid {
+  display: flex;
+  gap: 16rpx;
+}
+
+.stat-item {
+  flex: 1;
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 48rpx;
+  font-weight: 700;
+  color: #4A90E2;
+  line-height: 1;
+  margin-bottom: 8rpx;
+}
+
+.stat-label {
+  font-size: 24rpx;
+  color: #7A7E83;
+}
+
+.recent-section {
+  margin-bottom: 32rpx;
+}
+
+.session-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24rpx 0;
+  border-bottom: 1rpx solid #E1E8ED;
+}
+
+.session-score {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #28A745;
+}
+
+.session-time {
+  font-size: 24rpx;
+  color: #7A7E83;
+}

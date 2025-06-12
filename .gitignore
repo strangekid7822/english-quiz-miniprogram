@@ -1,0 +1,12 @@
+# WeChat Mini-Program
+node_modules/
+.DS_Store
+.vscode/
+*.log
+
+# WeChat specific
+miniprogram_npm/
+.tea/
+
+# Sensitive files (don't commit real values)
+# project.config.json should be reviewed before commit
