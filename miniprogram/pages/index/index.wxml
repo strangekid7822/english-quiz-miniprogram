@@ -3,8 +3,7 @@
   <view class="user-section card" wx:if="{{!hasUserInfo}}">
     <view class="title">欢迎使用智能英语练习</view>
     <view class="subtitle">授权登录开始学习</view>
-    <button class="btn-primary" open-type="getUserProfile" 
-            bindgetuserinfo="getUserProfile" wx:if="{{canIUseGetUserProfile}}">
+    <button class="btn-primary" bindtap="getUserProfile" wx:if="{{canIUseGetUserProfile}}">
       授权登录
     </button>
   </view>

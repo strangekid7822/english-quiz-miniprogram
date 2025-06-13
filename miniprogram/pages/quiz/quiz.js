@@ -23,29 +23,33 @@ Page({
   },
 
   loadQuestions() {
-    wx.cloud.callFunction({
-      name: 'getQuestions',
-      data: {
-        type: this.data.quizType,
-        count: 10
+    // Mock questions for testing
+    const mockQuestions = [
+      {
+        _id: 'q1',
+        content: 'Which sentence is correct?',
+        options: [
+          { label: 'A', text: 'I am going' },
+          { label: 'B', text: 'I am go' }
+        ],
+        answer: 'A'
       },
-      success: res => {
-        if (res.result.success) {
-          this.setData({
-            questions: res.result.data,
-            currentQuestion: res.result.data[0],
-            loading: false,
-            startTime: Date.now()
-          })
-        }
-      },
-      fail: err => {
-        console.error('获取题目失败', err)
-        wx.showToast({
-          title: '加载失败',
-          icon: 'error'
-        })
+      {
+        _id: 'q2', 
+        content: 'Past tense of run?',
+        options: [
+          { label: 'A', text: 'runned' },
+          { label: 'B', text: 'ran' }
+        ],
+        answer: 'B'
       }
+    ]
+    
+    this.setData({
+      questions: mockQuestions,
+      currentQuestion: mockQuestions[0],
+      loading: false,
+      startTime: Date.now()
     })
   },
   selectAnswer(e) {

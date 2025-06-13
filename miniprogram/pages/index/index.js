@@ -31,17 +31,18 @@ Page({
   },
 
   getUserProfile() {
-    wx.getUserProfile({
-      desc: '用于完善用户资料',
-      success: (res) => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
-        app.globalData.userInfo = res.userInfo
-        this.login()
-      }
+    // Mock user profile for testing
+    const mockUserInfo = {
+      nickName: 'Test User',
+      avatarUrl: 'https://mmbiz.qpic.cn/mmbiz/icTdbqWNOwNRna42FI242Lcia07jQodd2FJGIYQfG0LAJGFxM4FbnQP6yfMxBgJ0F3YRqJCJ1aPAK2dQagdusBZg/0'
+    }
+    
+    this.setData({
+      userInfo: mockUserInfo,
+      hasUserInfo: true
     })
+    app.globalData.userInfo = mockUserInfo
+    this.login()
   },
   login() {
     wx.cloud.callFunction({

@@ -1,6 +1,9 @@
 {
   "miniprogramRoot": "miniprogram/",
   "cloudfunctionRoot": "cloudfunctions/",
+  "cloudfunctionTemplate": {
+    "environment": "cloud1-6gjgm10q993af29b"
+  },
   "setting": {
     "urlCheck": false,
     "es6": true,
@@ -30,14 +33,21 @@
     "bundle": false,
     "useIsolateContext": true,
     "useCompilerModule": true,
-    "userConfirmedUseCompilerModuleSwitch": false
+    "userConfirmedUseCompilerModuleSwitch": false,
+    "compileWorklet": false,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "minifyWXSS": true,
+    "minifyWXML": true,
+    "localPlugins": false,
+    "disableUseStrict": false,
+    "useCompilerPlugins": false,
+    "condition": false,
+    "swc": false,
+    "disableSWC": true
   },
-  "appid": "your-app-id",
+  "appid": "wx23e98c31691d532b",
   "projectname": "english-quiz-miniprogram",
-  "debugOptions": {
-    "hidedInDevtools": []
-  },
-  "scripts": {},
   "isGameTourist": false,
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},
@@ -60,5 +70,12 @@
     "miniprogram": {
       "list": []
     }
-  }
+  },
+  "libVersion": "3.8.8",
+  "compileType": "miniprogram",
+  "packOptions": {
+    "ignore": [],
+    "include": []
+  },
+  "editorSetting": {}
 }
